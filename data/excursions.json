@@ -1,4 +1,64 @@
 {
-    "excursions": [],
-    "orders": []
+  "excursions": [
+    {
+      "title": "Warszawa",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "adultPrice": "100",
+      "childrenPrice": "80",
+      "id": 1
+    },
+    {
+      "title": "Poznań",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "adultPrice": "80",
+      "childrenPrice": "60",
+      "id": 2
+    },
+    {
+      "title": "Gdańsk",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "adultPrice": "120",
+      "childrenPrice": "100",
+      "id": 3
+    },
+    {
+      "title": "Kraków",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "adultPrice": "90",
+      "childrenPrice": "75",
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "name": "Jan Kowalski",
+      "email": "janek@email.pl",
+      "title": "Warszawa",
+      "adultNumber": "2",
+      "adultPrice": "100",
+      "childrenNumber": "4",
+      "childrenPrice": "80",
+      "id": 1
+    },
+    {
+      "name": "Grzegorz Nowak",
+      "email": "grzesiek@email.pl",
+      "title": "Poznań",
+      "adultNumber": "1",
+      "adultPrice": "80",
+      "childrenNumber": "2",
+      "childrenPrice": "60",
+      "id": 2
+    },
+    {
+      "name": "Alicja Kwarc",
+      "email": "alicja@email.pl",
+      "title": "Poznań",
+      "adultNumber": "3",
+      "adultPrice": "80",
+      "childrenNumber": "10",
+      "childrenPrice": "60",
+      "id": 3
+    }
+  ]
 }

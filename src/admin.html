@@ -12,18 +12,18 @@
         <ul class="panel__excursions excursions">
             <li data-id="1" class="excursions__item excursions__item--prototype">
                 <header class="excursions__header">
-                    <h2 class="excursions__title">Ogrodzieniec</h2>
-                    <p class="excursions__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam quam laboriosam quaerat temporibus dicta vitae maxime! Nemo, nobis veritatis?</p>
+                    <h2><span class="excursions__title">Ogrodzieniec</span></h2>
+                    <p><span class="excursions__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam quam laboriosam quaerat temporibus dicta vitae maxime! Nemo, nobis veritatis?</span></p>
                 </header>
                 <form class="excursions__form">
                     <div class="excursions__field">
                         <label class="excursions__field-name">
-                            Dorosły: <strong>99</strong>PLN
+                            Dorosły: <strong><span class="adults-price">99</span></strong>PLN
                         </label>
                     </div>
                     <div class="excursions__field">
                         <label class="excursions__field-name">
-                            Dziecko: <strong>50</strong>PLN
+                            Dziecko: <strong><span class="children-price">50</span></strong>PLN
                         </label>
                     </div>
                     <div class="excursions__field excursions__field--submit">
@@ -45,7 +45,7 @@
             <form class="form" novalidate>
                 <div class="form__row">
                     <label class="form__label">
-                        Nazwa:<input class="form__field" name="name" />
+                        Nazwa:<input class="form__field" name="title" />
                     </label>
                 </div>
                 <div class="form__row">
@@ -55,12 +55,12 @@
                 </div>
                 <div class="form__row">
                     <label class="form__label">
-                        Cena dorosły:<input class="form__field" type="number" name="name" />
+                        Cena dorosły:<input class="form__field" type="number" name="adultPrice" />
                     </label>
                 </div>
                 <div class="form__row">
                     <label class="form__label">
-                        Cena dziecko:<input class="order__form__field" type="number" name="name" />
+                        Cena dziecko:<input class="order__form__field" type="number" name="childrenPrice" />
                     </label>
                 </div>
                 <div class="order__field order__field--submit">
