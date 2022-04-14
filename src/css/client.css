@@ -2,13 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.headline__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.offer {
+    font-weight: 300;
 }
 
 ul {
     list-style: none;
 }
 
-.panel {
+.offer__panel {
     display: flex;
     margin: 0 auto;
     max-width: 1200px;
@@ -29,7 +43,21 @@ ul {
     border-radius: 5px;
     margin: 10px;
     padding: 20px;
-    width: calc(50% - 20px);
+    width: 100%;
+}
+
+.excursions__title, .excursions__description, .excursions__field, .order__total-price, .order__field, .summary__prices {
+    margin-bottom: 10px;
+}
+
+.excursions__field-input--submit, .order__field-submit {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #7ed6df;
+    transition: .2s;
+    color: #fff;
 }
 
 .panel__form {
@@ -46,4 +74,49 @@ ul {
 
 .excursions__item--prototype, .summary__item--prototype {
     display: none;
+}
+
+.container__headline {
+    height: 100vh;
+    background-image: url(../images/maledives.jpg);
+    background-attachment: fixed;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.headline__bigger {
+    font-size: 4em;
+    font-weight: 700;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.headline__smaller {
+    font-weight: 500;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+}
+
+.link__span {
+    margin-top: 100px;
+    background-color: #7ed6df;
+    padding: 10px 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transition: .2s;
+    border-radius: 10px;
+}
+
+.link__span:hover, .excursions__field-input--submit:hover, .order__field-submit:hover {
+    background-color: #22a6b3;
+    border-radius: 20px;
+}
+
+.summary__btn-remove {
+    text-decoration: none;
+    color: red;
 }

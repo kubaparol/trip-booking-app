@@ -9,7 +9,7 @@ const apiExcursions = 'http://localhost:3000/excursions';
 
 function init() {
     console.log('client');
-    
+
     loadExcursions();
     removeExcursions();
     addExcursions();
@@ -28,12 +28,7 @@ function loadExcursions() {
 
 function insertExcursions(excursionsArr) {
     const ulEl = document.querySelector('.panel__excursions');
-    const liElList = document.querySelectorAll('.excursions__item');
-    liElList.forEach(li => {
-        if(!li.classList.contains('excursions__item--prototype')) {
-            li.remove();
-        }
-    })
+    removePrototype();
     const liPrototype = document.querySelector('.excursions__item--prototype')
     excursionsArr.forEach(item => {
         const newLi = liPrototype.cloneNode(true);
@@ -43,14 +38,27 @@ function insertExcursions(excursionsArr) {
         const newLiAdultPrice = newLi.querySelector('.adults-price');
         const newLiChildrenPrice = newLi.querySelector('.children-price');
 
-        newLi.dataset.id = item.id;
-        newLiTitle.textContent = item.title;
-        newLiDescription.textContent = item.description;
-        newLiAdultPrice.textContent = item.adultPrice;
-        newLiChildrenPrice.textContent = item.childrenPrice;
+        getDataExcursions(newLi, newLiTitle, newLiDescription, newLiAdultPrice, newLiChildrenPrice, item);
 
         ulEl.appendChild(newLi);
     })
+}
+
+function removePrototype() {
+    const liElList = document.querySelectorAll('.excursions__item');
+    liElList.forEach(li => {
+        if (!li.classList.contains('excursions__item--prototype')) {
+            li.remove();
+        }
+    })
+}
+
+function getDataExcursions(liDataset, liTitle, liDescription, liAdultPrice, liChildrenPrice, item) {
+    liDataset.dataset.id = item.id;
+    liTitle.textContent = item.title;
+    liDescription.textContent = item.description;
+    liAdultPrice.textContent = item.adultPrice;
+    liChildrenPrice.textContent = item.childrenPrice;
 }
 
 function removeExcursions() {
@@ -72,7 +80,12 @@ function addExcursions() {
     form.addEventListener('submit', e => {
         e.preventDefault();
 
-        const {title, description, adultPrice, childrenPrice} = e.target;
+        const {
+            title,
+            description,
+            adultPrice,
+            childrenPrice
+        } = e.target;
         const data = {
             title: title.value,
             description: description.value,
@@ -80,22 +93,30 @@ function addExcursions() {
             childrenPrice: childrenPrice.value
         };
         const errors = [];
-        for(const prop in data) {
-            if(data[prop] === '') {
-                errors.push('error')
-            }
-        }
-        if(errors.length > 0) {
+        checkErrors(errors, data);
+        if (errors.length > 0) {
             alert('Uzupełnij wszystkie dane!')
         } else {
             api.addData(data, apiExcursions)
                 .finally(loadExcursions);
-            title.value = '';
-            description.value = '';
-            adultPrice.value = '';
-            childrenPrice.value = '';
+            clearInputs();
         }
     });
+}
+
+function checkErrors(errorsArr, key) {
+    for (const prop in key) {
+        if (key[prop] === '') {
+            errorsArr.push('error');
+        }
+    }
+}
+
+function clearInputs() {
+    title.value = '';
+    description.value = '';
+    adultPrice.value = '';
+    childrenPrice.value = '';
 }
 
 function updateExcursions() {
@@ -104,30 +125,39 @@ function updateExcursions() {
         const targetEl = e.target;
         const liEl = targetEl.parentElement.parentElement.parentElement;
         const button = liEl.querySelector('.excursions__field-input--update');
-        if(targetEl === button) {
+        if (targetEl === button) {
             console.log(button)
             e.preventDefault();
             const spanList = liEl.querySelectorAll('span');
             const isEditable = [...spanList].every(span => span.isContentEditable);
-            if(isEditable) {
-                const id = liEl.dataset.id;
-                const data = {
-                    title: spanList[0].innerText,
-                    description: spanList[1].innerText,
-                    adultPrice: spanList[2].innerText,
-                    childrenPrice: spanList[3].innerText
-                }
-                api.updateData(apiExcursions, id, data)
-                .finally(() => {
-                    button.value = 'edytuj';
-                    spanList.forEach(span => span.contentEditable = false);
-                    liEl.classList.remove('is-editable');
-                })
+            if (isEditable) {
+                spanIsEditable(button, spanList, liEl);
             } else {
-                button.value = 'zapisz';
-                spanList.forEach(span => span.contentEditable = true);
-                liEl.classList.add('is-editable');
+                spanIsNotEditable(button, spanList, liEl);
             }
         }
     })
+}
+
+function spanIsEditable(button, spanList, liEl) {
+    const id = liEl.dataset.id;
+    const [title, description, adultPrice, childrenPrice] = spanList;
+    const data = {
+        title: title.innerText,
+        description: description.innerText,
+        adultPrice: adultPrice.innerText,
+        childrenPrice: childrenPrice.innerText
+    }
+    api.updateData(apiExcursions, id, data)
+        .finally(() => {
+            button.value = 'edytuj';
+            spanList.forEach(span => span.contentEditable = false);
+            liEl.classList.remove('is-editable');
+        })
+}
+
+function spanIsNotEditable(button, spanList, liEl) {
+    button.value = 'zapisz';
+    spanList.forEach(span => span.contentEditable = true);
+    liEl.classList.add('is-editable');
 }

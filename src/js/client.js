@@ -2,6 +2,8 @@ import './../css/client.css';
 
 import ExcursionsAPI from './ExcursionsAPI';
 
+import Trip from './trip.js';
+
 const api = new ExcursionsAPI();
 
 document.addEventListener('DOMContentLoaded', init);
@@ -92,11 +94,13 @@ function addToBasket(e) {
         totalBasketAmountArr.push(parseInt(itemPrice.textContent));
         totalBasketAmountEl.textContent = `${sumTotalBasketAmount(totalBasketAmountArr)}PLN`;
     }
-    adultNumber.value = '';
-    childrenNumber.value = '';
-    console.log(basket)
-
+    clearValues(adultNumber, childrenNumber);
     getRemoveButtons();
+}
+
+function clearValues(input1, input2) {
+    input1.value = '';
+    input2.value = '';
 }
 
 function removeTrip(e) {
@@ -133,29 +137,6 @@ function sumTotalBasketAmount(arr) {
     }
     return sum;
 }
-
-class Trip {
-    constructor(initTitle, initAdultNumber, initAdultPrice, initChildNumber, initChildPrice) {
-        this.title = initTitle;
-        this.adultNumber = initAdultNumber;
-        this.adultPrice = initAdultPrice;
-        this.childNumber = initChildNumber;
-        this.childPrice = initChildPrice;
-    }
-    addTrip(nameEl, priceEl, paragraphEl) {
-        nameEl.textContent = this.title;
-        const price = (this.adultNumber * this.adultPrice) + (this.childNumber * this.childPrice);
-        priceEl.textContent = `${price}PLN`;
-        if (this.childNumber === '') {
-            paragraphEl.textContent = `dorośli: ${this.adultNumber} x ${this.adultPrice}PLN`;
-        } else if (this.adultNumber === '') {
-            paragraphEl.textContent = `dzieci: ${this.childNumber} x ${this.childPrice}PLN`;
-        } else {
-            paragraphEl.textContent = `dorośli: ${this.adultNumber} x ${this.adultPrice}PLN, dzieci: ${this.childNumber} x ${this.childPrice}PLN`;
-        }
-    }
-}
-
 
 function checkDataAndOrderConfirmation(e) {
     e.preventDefault();
