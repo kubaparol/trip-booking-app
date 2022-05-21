@@ -24,6 +24,7 @@ module.exports = {
         compress: true,
         port: 8080.
     },
+    mode: 'development',
     module: {
         rules: [
             {
