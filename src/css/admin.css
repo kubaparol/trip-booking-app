@@ -1,58 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat';
+    list-style: none;
 }
 
-ul {
-    list-style: none;
+:root {
+    --bcgBody: #B4E197;
+    --bcgFormButton: #83BD75;
+    --colorFormButton: #fff;
+    --bcgForm: #e3ebdb;
+    --bcgExcursionsItemButtonUpdate: #83BD75;
+    --bcgExcursionsItemButtonRemove: #e74c3c;
+    --colorExcursionsItemButton: #fff;
+    --bcgExcursionsList: #DDFFBC;
+}
+
+body {
+    background-color: var(--bcgBody);
+}
+
+h1 {
+    background-color: #52734D;
+    color: #fff;
+    padding: 10px;
 }
 
 .panel {
     display: flex;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 30px 0;
+    flex-direction: column-reverse;
 }
 
-.panel__excursions {
-    width: 70%;
+/* form */
+
+.form {
+    font-weight: 500;
+    background-color: var(--bcgForm);
+    padding-top: 12px;
 }
 
-.excursions {
-    display: flex;
-    flex-wrap: wrap;
+.form__label {
+    margin-left: 5px;
 }
 
-.excursions__item {
-    border: 1px solid #bbb;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 20px;
-    width: calc(50% - 20px);
-    transition: .3s;
-    background-color: #fff;
-}
-
-.panel__form {
-    background-color: #f4f4f4;
-    padding: 20px;
-    width: 30%;
-}
-
-.uploader, .order {
-    border-bottom: 1px solid #bbb;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+.form__field, .order__form__field {
+    width: 100%;
+    resize: vertical;
+    height: 25px;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid green;
+    padding: 10px;
 }
 
 .form__field {
-    display: block;
+    margin-bottom: 15px;
 }
 
-.form__field--longtext {
-    height: 100px;
+.order__field-submit {
+    font-size: 1rem;
+    padding: 5px 40px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bcgFormButton);
+    color: var(--colorFormButton);
+    transition: .2s;
+    margin: 20px;
+    cursor: pointer;
 }
+
+/* list */
+
+.panel__excursions {
+    padding: 10px;
+}
+
+.excursions__item {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--bcgExcursionsList);
+    border-radius: 15px;
+}
+
+.excursions__title, .excursions__description, .excursions__field {
+    margin-bottom: 10px;
+}
+
+.excursions__description {
+    font-weight: 500;
+}
+
+.excursions__field-input--update, .excursions__field-input--remove {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bcgExcursionsItemButtonUpdate);
+    color: var(--colorExcursionsItemButton);
+    transition: .2s;
+    cursor: pointer;
+}
+
+.excursions__field-input--update:hover, .order__field-submit:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: green;
+}
+
+.excursions__field-input--remove:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: #c0392b;
+}
+
+.excursions__field-input--remove {
+    background-color: var(--bcgExcursionsItemButtonRemove);
+}
+
+.excursions__field {
+    margin-top: 10px;
+}
+
 
 .excursions__item--prototype {
     display: none;
@@ -60,6 +135,8 @@ ul {
 
 .is-editable{
     border: 3px solid black;
-    transform: scale(1.1);
-    z-index: 1;
+}
+
+.is-editable  .excursions__title, .is-editable .excursions__description, .is-editable .adults-price, .is-editable .children-price {
+    color: #b71540;
 }
