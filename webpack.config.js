@@ -17,6 +17,13 @@ module.exports = {
         // definiuję nazwę pliku wyjściowego
     },
     devtool: 'inline-source-map',
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'build'),
+        },
+        compress: true,
+        port: 8080.
+    },
     module: {
         rules: [
             {

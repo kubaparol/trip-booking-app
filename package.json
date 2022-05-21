@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --mode development",
     "build": "webpack --mode production",
-    "api": "json-server --watch ./data/excursions.json"
+    "api": "json-server --watch ./data/excursions.json",
+    "start:dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
@@ -19,9 +20,12 @@
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
     "style-loader": "^3.2.1",
-    "webpack": "^5.44.0",
+    "webpack": "^5.72.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-dev-server": "^4.9.0",
     "whatwg-fetch": "^3.6.2"
+  },
+  "dependencies": {
+    "serve": "^13.0.2"
   }
 }
