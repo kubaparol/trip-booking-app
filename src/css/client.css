@@ -1,122 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.headline__link {
-    text-decoration: none;
-    color: #fff;
-}
-
-.offer {
-    font-weight: 300;
-}
-
-ul {
     list-style: none;
+    font-family: 'Montserrat';
 }
 
-.offer__panel {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 30px 0;
+:root {
+    --bcgBody: #B4E197;
+    --bcgBasket: #e3ebdb;
+    --bcgExcursionsList: #DDFFBC;
+    --removeButton: red;
+    --borderColor: #83BD75;
+    --bcgExcursionsItemButton: #83BD75;
+    --colorExcursionsItemButton: #fff;
+    --bcgBasketItemButton: #6fad66;
+    --colorBasketItemButton: #fff;
 }
 
-.panel__excursions {
-    width: 70%;
+body {
+    background-color: var(--bcgBody);
 }
 
-.excursions {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.excursions__item {
-    border: 1px solid #bbb;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 20px;
-    width: 100%;
-}
-
-.excursions__title, .excursions__description, .excursions__field, .order__total-price, .order__field, .summary__prices {
-    margin-bottom: 10px;
-}
-
-.excursions__field-input--submit, .order__field-submit {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    background-color: #7ed6df;
-    transition: .2s;
-    color: #fff;
-}
-
-.panel__form {
-    background-color: #f4f4f4;
-    padding: 20px;
-    width: 30%;
-}
-
-.uploader, .order {
-    border-bottom: 1px solid #bbb;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-}
-
-.excursions__item--prototype, .summary__item--prototype {
+.summary__item--prototype, .excursions__item--prototype {
     display: none;
 }
 
-.container__headline {
-    height: 100vh;
-    background-image: url(../images/maledives.jpg);
-    background-attachment: fixed;
-    color: #fff;
-    text-transform: uppercase;
+/* excursions list */
+
+.offer__panel {
+    padding: 20px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
-.headline__bigger {
-    font-size: 4em;
-    font-weight: 700;
-    position: absolute;
-    top: 40%;
-    left: 10%;
+.excursions__item {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--bcgExcursionsList);
+    border-radius: 15px;
 }
 
-.headline__smaller {
+.excursions__title, .excursions__description, .excursions__field {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.excursions__description {
     font-weight: 500;
-    position: absolute;
-    top: 60%;
-    left: 10%;
 }
 
-.link__span {
-    margin-top: 100px;
-    background-color: #7ed6df;
-    padding: 10px 30px;
-    cursor: pointer;
-    position: absolute;
-    top: 60%;
-    left: 10%;
-    transition: .2s;
+.excursions__field-name {
+    font-weight: 400;
+}
+
+.excursions__field--input {
+    width: 30px;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid var(--borderColor);
+    outline: none;
+    background-color: transparent;
+}
+
+.excursions__field-input--submit {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    font-weight: 500;
+    border: none;
     border-radius: 10px;
+    background-color: var(--bcgExcursionsItemButton);
+    color: var(--colorExcursionsItemButton);
+    transition: .2s;
 }
 
-.link__span:hover, .excursions__field-input--submit:hover, .order__field-submit:hover {
-    background-color: #22a6b3;
-    border-radius: 20px;
+.children-price, .adults-price {
+    font-weight: 500;
+}
+
+/* basket form */
+
+.panel__form {
+    background-color: var(--bcgBasket);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.order__total-price {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.order__field {
+    margin-bottom: 10px;
+}
+
+.order__field-input {
+    width: 50%;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid green;
+}
+
+.order__field-submit {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    width: 150px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bcgBasketItemButton);
+    color: var(--colorBasketItemButton);
+    transition: .2s;
+}
+
+
+/* basket */
+
+.panel__summary {
+    margin-top: 12px;
+}
+
+.summary__item {
+    padding: 10px;
+    border-top: 2px solid var(--borderColor); 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.summary__title {
+    margin-bottom: 5px;
 }
 
 .summary__btn-remove {
     text-decoration: none;
-    color: red;
+    color: var(--removeButton);
+    margin-left: 5px;
+}
+
+@media (min-width: 1000px) {
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .offer__panel {
+        flex-direction: row;
+        max-width: 1700px;
+        justify-content: center;
+        height: 80vh;
+        overflow: hidden;
+        background-color: #6fad66;
+        border-radius: 10px;
+    }
+    
+    .panel__excursions {
+        overflow-y: auto;
+        width: 70%;
+        margin-right: 20px;
+    }
+
+    .excursions__item {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .panel__form {
+        width: 30%;
+        overflow-y: auto;
+        margin-bottom: 0;
+    }
+
+    .excursions__field-input--submit:hover, .order__field-submit:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+        background-color: green;
+    } 
 }
