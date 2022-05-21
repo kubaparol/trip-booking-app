@@ -3,10 +3,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // importuję odpowiedni plugin
 module.exports = {
-    // entry: ['whatwg-fetch', './src/js/ExcursionsAPI.js'],
     entry: {
-        client: './src/js/client.js',
-        admin: './src/js/admin.js',
+        client: ['whatwg-fetch', './src/js/client.js'],
+        admin: ['whatwg-fetch', './src/js/admin.js'],
     },
     // definiuje pliki wejściowe
     // posiadające swoje identyfikatory [chunks]

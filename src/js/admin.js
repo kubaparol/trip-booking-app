@@ -99,7 +99,7 @@ function addExcursions() {
         } else {
             api.addData(data, apiExcursions)
                 .finally(loadExcursions);
-            clearInputs();
+            clearInputs(title, description, adultPrice, childrenPrice);
         }
     });
 }
@@ -112,7 +112,7 @@ function checkErrors(errorsArr, key) {
     }
 }
 
-function clearInputs() {
+function clearInputs(title, description, adultPrice, childrenPrice) {
     title.value = '';
     description.value = '';
     adultPrice.value = '';

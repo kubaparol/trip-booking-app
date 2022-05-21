@@ -167,7 +167,7 @@ function checkDataAndOrderConfirmation(e) {
         }
     }
     correct.forEach(element => {
-        element.style.background = 'white';
+        element.style.background = 'transparent';
     })
 }
 
