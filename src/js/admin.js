@@ -150,9 +150,13 @@ function spanIsEditable(button, spanList, liEl) {
     }
     api.updateData(apiExcursions, id, data)
         .finally(() => {
-            button.value = 'edytuj';
-            spanList.forEach(span => span.contentEditable = false);
-            liEl.classList.remove('is-editable');
+            if(isNaN(Number(adultPrice.innerText)) || isNaN(Number(childrenPrice.innerText))) {
+                alert('Wprowadź poprawne wartości!')
+            } else {
+                button.value = 'edytuj';
+                spanList.forEach(span => span.contentEditable = false);
+                liEl.classList.remove('is-editable');
+            }
         })
 }
 

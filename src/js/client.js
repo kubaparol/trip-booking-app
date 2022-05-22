@@ -85,7 +85,7 @@ function addToBasket(e) {
 
     if (adultNumber.value === '' && childrenNumber.value === '') {
         alert('Wprowadź wartości!');
-    } else if (isNaN(Number(adultNumber.value)) || isNaN(Number(childrenNumber.value))) {
+    } else if (isNaN(Number(adultNumber.value)) || isNaN(Number(childrenNumber.value)) || Math.sign(adultNumber.value) === -1 || Math.sign(childrenNumber.value) === -1 ) {
         alert('Wprowadź poprawne wartości!');
     } else {
         summaryEl.appendChild(newSummaryItem);
