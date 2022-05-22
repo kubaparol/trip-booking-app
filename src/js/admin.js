@@ -5,7 +5,7 @@ import ExcursionsAPI from './ExcursionsAPI';
 const api = new ExcursionsAPI();
 
 document.addEventListener('DOMContentLoaded', init);
-const apiExcursions = 'http://localhost:3000/excursions';
+const apiExcursions = 'https://fake-database-server.herokuapp.com/excursions';
 
 function init() {
     console.log('client');

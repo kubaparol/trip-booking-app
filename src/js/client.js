@@ -14,8 +14,8 @@ function init() {
     loadExcursions();
 }
 
-const apiExcursions = 'http://localhost:3000/excursions';
-const apiOrders = 'http://localhost:3000/orders';
+const apiExcursions = 'https://fake-database-server.herokuapp.com/excursions';
+const apiOrders = 'https://fake-database-server.herokuapp.com/orders';
 const totalBasketAmountEl = document.querySelector('.order__total-price-value');
 const totalBasketAmountArr = [];
 const basket = [];
