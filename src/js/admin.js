@@ -66,7 +66,7 @@ function removeExcursions() {
     ulEl.addEventListener('click', e => {
         e.preventDefault();
         const targetEl = e.target;
-        if (targetEl.classList.contains('excursions__field-input--remove')) {
+        if (targetEl.classList.contains('excursions__field-input--remove') && confirm('Czy na pewno chcesz usunąć wycieczkę?') === true) {
             const liEl = targetEl.parentElement.parentElement.parentElement;
             const id = liEl.dataset.id;
             api.removeData(apiExcursions, id)
