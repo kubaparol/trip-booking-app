@@ -1,29 +1,29 @@
 {
   "excursions": [
     {
-      "title": "Warszawa",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "title": "Kopalnia Soli \"Wieliczka\"",
+      "description": "Kopalnia soli kamiennej, w Wieliczce pod Krakowem. Od XIII wieku do 1772 wspólnie z kopalnią soli „Bochnia” wchodziła w skład żup krakowskich. Sole wydobywane w kopalni pochodzą z miocenu. W 1976 roku kopalnia wpisana została do krajowego rejestru zabytków.",
       "adultPrice": "100",
       "childrenPrice": "80",
       "id": 1
     },
     {
-      "title": "Poznań",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "title": "Zamek w Malborku",
+      "description": "zamek w Malborku, na prawym brzegu Nogatu, wzniesiony w kilku etapach od 1280 do poł. XV w. przez zakon krzyżacki.",
       "adultPrice": "80",
       "childrenPrice": "60",
       "id": 2
     },
     {
-      "title": "Gdańsk",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "title": "Twierdza Srebrna Góra",
+      "description": "Twierdza Srebrna Góra jest unikatowym obiektem w skali militarnego dziedzictwa kulturowego Europy i jedną z najważniejszych atrakcji Dolnego Śląska. Została wzniesiona w latach 1765-1777.",
       "adultPrice": "120",
       "childrenPrice": "100",
       "id": 3
     },
     {
-      "title": "Kraków",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "title": "Morskie Oko",
+      "description": "Największe jezioro w Tatrach, które znajduje się w Dolinie Rybiego Potoku u stóp Mięguszowieckich Szczytów, na wysokości 1395 m n.p.m. To jezioro pochodzenia polodowcowego o barwie zielonej. Morskie Oko ma 34,93 ha powierzchni, a 50,8 m głębokości (w najgłębszym miejscu).",
       "adultPrice": "90",
       "childrenPrice": "75",
       "id": 4
