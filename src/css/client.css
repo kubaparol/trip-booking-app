@@ -39,6 +39,10 @@ body {
 
 /* excursions list */
 
+.panel__excursions {
+    min-width: 30vw;
+}
+
 .offer__panel {
     padding: 20px;
     display: flex;
@@ -100,6 +104,7 @@ body {
     text-align: center;
     margin-bottom: 15px;
     padding: 10px;
+    min-width: 30vw;
 }
 
 .order__total-price {

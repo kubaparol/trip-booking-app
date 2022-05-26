@@ -1,4 +1,5 @@
 import './../css/admin.css';
+import './../css/loader.css';
 
 import ExcursionsAPI from './ExcursionsAPI';
 
@@ -16,11 +17,25 @@ function init() {
     updateExcursions();
 }
 
+function displayLoading(loader) {
+    loader.style.display = 'block';
+    document.body.style.pointerEvents = 'none';
+    document.body.style.opacity = '0.4';
+}
 
+function hideLoading(loader) {
+    loader.style.display = 'none';
+    document.body.style.pointerEvents = 'auto';
+    document.body.style.opacity = '1';
+}
 
 function loadExcursions() {
+    const loader = document.querySelector('.excursions__loader');
+    displayLoading(loader);
+
     api.loadData(apiExcursions)
         .then(data => {
+            hideLoading(loader)
             insertExcursions(data)
         })
         .catch(err => console.log(err));
