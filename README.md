@@ -1,8 +1,6 @@
 # Trip Booking App
 
-![screen client side](./assets/client-site.png)
-
-![screen admin side](./assets/admin-site.png)
+![screen client side](./assets/app-screen.png)
 
 &nbsp;
 
