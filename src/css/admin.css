@@ -58,6 +58,10 @@ h1 {
     padding: 10px;
 }
 
+.form__field:focus, .order__form__field:focus {
+    border-bottom: 2px solid green;
+}
+
 .form__field {
     margin-bottom: 15px;
 }
@@ -140,3 +144,32 @@ h1 {
 .is-editable  .excursions__title, .is-editable .excursions__description, .is-editable .adults-price, .is-editable .children-price {
     color: #b71540;
 }
+
+@media(min-width: 1000px) {
+    .panel {
+        flex-direction: row-reverse;
+        height: calc(100vh - 59px);
+    }
+    
+    .panel__excursions {
+        overflow-y: scroll;
+        width: 70%;
+    }
+
+    .form__container {
+        width: 30%;
+    }
+    
+    .form {
+        height: 100%
+    }
+
+    .form__field--longtext {
+        height: 150px;
+    }
+
+    .order__field--submit {
+        text-align: center;
+    }
+}
+
