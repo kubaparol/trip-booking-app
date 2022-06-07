@@ -88,6 +88,15 @@ npm start
 
 &nbsp;
 
+## :wave: Feel free to contact me
+
+You can find me here:
+
+- [LinkedIn](https://www.linkedin.com/in/jakub-parol/)
+- [GitHub](https://github.com/kubaparol)
+
+&nbsp;
+
 ## :clap: Special thanks
 
 Special thanks to my [Mentor - devmentor.pl](https://devmentor.pl/) - for providing me with this task and for code review.
