@@ -4,6 +4,16 @@
 
 &nbsp;
 
+### Contents:
+
+- [Overview](#mag-overview)
+- [Technologies](#bulb-technologies)
+- [Installation](#cd-installation)
+- [Contact](#wave-feel-free-to-contact-me)
+- [Special thanks](#clap-special-thanks)
+
+&nbsp;
+
 ## :mag: Overview
 
 **Trip Booking App** is a tool that consists of two elements. The client site allows you to order trips, which are added to the database. Admin site allows you to manage trips. This is made possible by the [fake-server](https://github.com/kubaparol/fake-json-server-heroku).
